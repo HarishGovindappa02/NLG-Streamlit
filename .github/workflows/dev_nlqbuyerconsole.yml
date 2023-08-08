@@ -60,4 +60,4 @@ jobs:
         with:
           app-name: 'NLQBuyerConsole'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_821575F9D93F4AE3B5E62052A0D8285C }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C50B94AB07F54649931E41A87AA80643 }}
