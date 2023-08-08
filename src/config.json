@@ -1,0 +1,8 @@
+{
+    "openai": {
+		"base": "https://openai-text-image.openai.azure.com/",
+		"key": "a15a6a44cd41425280e2ac15298e05db",
+		"version": "2023-03-15-preview",
+		"type": "azure"
+	}
+}
