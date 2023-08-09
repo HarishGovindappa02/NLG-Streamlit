@@ -32,10 +32,10 @@ logging.info('Code running from: {}'.format(ROOT_DIR))
 
 with open(os.path.join(ROOT_DIR, 'config.json'), 'r') as jsonfile:
     config = json.load(jsonfile)
-oai_base = "https://openai-text-image.openai.azure.com/"
-oai_key = "a15a6a44cd41425280e2ac15298e05db"
-oai_ver = "2023-03-15-preview"
-oai_type = "azure"
+oai_base = config['openai']['base']
+oai_key = config['openai']['key']
+oai_ver = config['openai']['version']
+oai_type = config['openai']['type']
 
 openai.api_type = oai_type
 openai.api_key = oai_key
@@ -60,11 +60,11 @@ class QnABot:
         print("result===>>>",results)
         
         print("PFD SELECTED:-", message)
-        message = [re.sub(r'\\\\', r'/', path) for path in message]
-        print("FINAL PFD SELECTED:-", message)
+        pdf_message = [path.replace('\\\\', '/') for path in message]
+        print("FINAL PFD SELECTED2:-", pdf_message)
         #else:
             #message = "I could not find the answer to the question in the reference."
 
-        SendSource = mainToResponse(message, input_query)
-        return SendSource, message
+        SendSource = mainToResponse(pdf_message, input_query)
+        return SendSource, pdf_message
 
