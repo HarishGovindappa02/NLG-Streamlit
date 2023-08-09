@@ -60,7 +60,7 @@ class QnABot:
         print("result===>>>",results)
         
         print("PFD SELECTED:-", message)
-        message = message.replace('\\\\', '\\')
+        message = [path.replace('\\\\', '\\') for path in message]
         print("FINAL PFD SELECTED:-", message)
         #else:
             #message = "I could not find the answer to the question in the reference."
