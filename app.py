@@ -89,7 +89,7 @@ def main():
         if isinstance(response,str):
             #st.markdown(f''' :red[{response}]''')
             #st.write(response)
-            st.markdown (response, unsafe_allow_html=True)
+            st.markdown (response)
             st.markdown("""  """)
             st.markdown(f''' :red[References: ] :blue[{pdf_reference}] ''')
             st.markdown("""  """)
