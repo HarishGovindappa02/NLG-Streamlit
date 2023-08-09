@@ -60,6 +60,8 @@ class QnABot:
         print("result===>>>",results)
         
         print("PFD SELECTED:-", message)
+        message = message.replace('\\\\', '\\')
+        print("FINAL PFD SELECTED:-", message)
         #else:
             #message = "I could not find the answer to the question in the reference."
 
