@@ -84,7 +84,7 @@ def main():
         message = responses[1]
 
         # Remove "Job Description" from each file path
-        pdf_reference = [path.replace('Legal Documents\\', '') for path in message]
+        pdf_reference = [path.replace('Job Description\\', '') for path in message]
 
         if isinstance(response,str):
             #st.markdown(f''' :red[{response}]''')
