@@ -89,7 +89,7 @@ def main():
         if isinstance(response,str):
             #st.markdown(f''' :red[{response}]''')
             #st.write(response)
-            st.markdown (response)
+            st.markdown (response, unsafe_allow_html=True)
             st.markdown("""  """)
             logging.info('Code running from: {}'.format(response))
             logging.info('Code running from:')
