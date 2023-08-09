@@ -60,7 +60,8 @@ class QnABot:
         print("result===>>>",results)
         
         print("PFD SELECTED:-", message)
-        pdf_message = [path.replace('\\\\', '////') for path in message]
+        #pdf_message = [path.replace('\\\\', '////') for path in message]
+        pdf_message = [path.replace('Job Description\\', 'Job Description/') for path in message]
         print("FINAL PFD SELECTED2:-", pdf_message)
         current_path = os.getcwd()
         print("Current Path:", current_path)
