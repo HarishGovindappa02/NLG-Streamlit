@@ -46,7 +46,7 @@ memory_file='memory.txt'
 vectorstore='db1'
 class QnABot:
     def __init__(self, template, input_variable_names, input_variables, dbpath="docs_index_v1") -> None:
-        self.embeddings = OpenAIEmbeddings(openai_api_key = oai_key)
+        self.embeddings = OpenAIEmbeddings(openai_api_key = oai_key, engine = 'text-embedding-ada-002')
         self._db = FAISS.load_local(dbpath, self.embeddings)
         self._input_variables = input_variables
         
