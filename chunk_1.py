@@ -97,10 +97,10 @@ def generate_sections_with_gpt4(sentences, query):
             stop=None
         )
 
-        yield responses.append(response['choices'][0]['message']['content'])
+        responses.append(response['choices'][0]['message']['content'])
 
-    # Join the responses back into a single string
-    #full_response = "\n".join(responses)
+    #Join the responses back into a single string
+    full_response = "\n".join(responses)
     # messages = [
     #                 {"role": "assistant", "content": f"Job Description: {full_response}"},
     #                 {"role": "assistant", "content": "Format the output as HTML markdown with small blue headers."}
@@ -119,7 +119,7 @@ def generate_sections_with_gpt4(sentences, query):
 
     # return response['choices'][0]['message']['content']
     
-    #return full_response
+    return full_response
 
 
 
@@ -128,8 +128,7 @@ def mainToResponse(pdf_path, query):
     text = extract_text_from_pdf(pdf_path)
     sentences = chunk_text_into_sentences(text)
     sections = generate_sections_with_gpt4(sentences, query)
-    for response_generator in sections:
-        return response_generator
+    return sections
     
 
     print("sections:", sections)
