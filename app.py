@@ -28,7 +28,7 @@ openai.api_base = oai_base
 openai.api_version = oai_ver
 
 def get_query():
-    input_text = st.text_area(label="Input Query", height = 300, label_visibility='collapsed', placeholder="Your Query...", key="query")
+    input_text = st.text_area(label="Input Query", height = 250, label_visibility='collapsed', placeholder="Your Query...", key="query")
     return input_text.strip()
 
 #
@@ -40,13 +40,13 @@ def main():
     with col1:
         # Load and display the image
         image = Image.open('logo/2.png')
-        st.image(image, width=50)
+        st.image(image, width=58)
 
     with col2:
         # Custom header with different font style and size
         header_text = "Next-Gen Recruitment: Unilever's Job Description Generating AI Tool Based on Custom Indexed data in Chat-GPT4"
 
-        st.markdown(f"<h1 style='font-family: Arial, sans-serif; font-size: 11px;'>{header_text}</h1>", unsafe_allow_html=True)
+        st.markdown(f"<h1 style='font-family: Arial, sans-serif; font-size: 13px;'>{header_text}</h1>", unsafe_allow_html=True)
 
     col1,col2,col3 = st.columns(3)
 
@@ -55,8 +55,10 @@ def main():
     #         'Select reference documents',
     #         ('Job Description','Legal Documents','UL_Docs', 'All', 'MSD','PPT','Multi')
     #     )
-    
-    st.markdown('### Enter your Query here:')
+    st.markdown("""  """)
+    st.markdown("""  """)
+    st.markdown("""  """)
+    st.markdown('##### Enter your Query here:')
     
     query = get_query()
     submit_button = st.button("Submit")
