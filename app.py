@@ -4,7 +4,7 @@ import streamlit as st
 import json, logging, os, openai
 from langchain import PromptTemplate
 from src.qna_bot import QnABot
-
+from format_response import replace_text
 template = """
 
 
@@ -84,6 +84,7 @@ def main():
         responses = bot1.get_response()
         response = responses[0]
         message = responses[1]
+        response = replace_text(response)
 
         # Remove "Job Description" from each file path
         pdf_reference = [path.replace('Job Description\\', '') for path in message]
