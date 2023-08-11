@@ -71,17 +71,17 @@ def generate_sections_with_gpt4(sentences, query):
         content1 = f"""
         You are an AI assistant that helps people to create job descriptions 
         for given role in triple single quotes based on multiple job descriptions 
-        delimited using triple backticks.Format Job Description as html markdown using small blue headers and bullet points in details and donot change the headers with details  and role{role}.    
+        delimited using triple backticks.
+        Add About Unilever Be part of the world’s most successful, purpose-led business. Work with brands that are well-loved around the world, that improve the lives of our consumers and the communities around us. We promote innovation, big and small, to make our business win and grow; and we believe in business as a force for good. Unleash your curiosity, challenge ideas and disrupt processes; use your energy to make this happen. Our brilliant business leaders and colleagues provide mentorship and inspiration, so you can be at your best. Every day, nine out of ten Indian households use our products to feel good, look good and get more out of life – giving us a unique opportunity to build a brighter future, About Uniops Unilever Operations (UniOps) is the global technology and operations engine of Unilever offering business services, technology, and enterprise solutions. UniOps serves over 190 locations and through a network of specialized service lines and partners delivers insights and innovations, user experiences and end-to-end seamless delivery making Unilever Purpose Led and Future Fit. in headers after Location and keep the same pattern and headers.        
+        Format Job Description as html markdown using small blue headers and bullet points in details and description and donot change the role{role}.    
         Multiple Job Descriptions: ```{context}```       
         Role: '''{role}'''     
         Think through each section of all the multiple job descriptions 
         and prepare each section for given role by using relevant information.
-        Final job descripion should have all the sections in detail in both descriptions exactly once in the response.
+        Final job descripion should have all the sections in both descriptions exactly once in the response.
         There should not be any duplicate sections.      
-        Add About Unilever, About Uniops headers after Location and keep the same pattern.        
         Job Description for {role}
         """
-       
 
         messages = [{"role": "assistant", "content": content1}]
                 # Make the API call with the Chat API
