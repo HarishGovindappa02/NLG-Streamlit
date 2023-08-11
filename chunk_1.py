@@ -68,16 +68,15 @@ def generate_sections_with_gpt4(sentences, query):
 
         #print("role:", role)
 
-        # Prepare the message list for the Chat API
         content1 = f"""
         You are an AI assistant that helps people to create job descriptions 
         for given role in triple single quotes based on multiple job descriptions 
-        delimited using triple backticks.Format Job Description as html markdown using small blue headers and bullet points and donot change the role{role}.    
+        delimited using triple backticks.Format Job Description as html markdown using small blue headers and bullet points in details and donot change the headers with details  and role{role}.    
         Multiple Job Descriptions: ```{context}```       
         Role: '''{role}'''     
         Think through each section of all the multiple job descriptions 
         and prepare each section for given role by using relevant information.
-        Final job descripion should have all the sections in both descriptions exactly once in the response.
+        Final job descripion should have all the sections in detail in both descriptions exactly once in the response.
         There should not be any duplicate sections.      
         Add About Unilever, About Uniops headers after Location and keep the same pattern.        
         Job Description for {role}
